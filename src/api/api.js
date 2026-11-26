@@ -24,3 +24,11 @@ export function lendVerify(params) {
     // data: params
   })
 }
+// 还款计划分页查询(还款管理菜单共用)
+export function getRepaymentPlans(pageNo, pageSize, query) {
+  return request({
+    url: `/repayment/m/repayment-plans/q?pageNo=${pageNo}&pageSize=${pageSize}`,
+    method: 'post',
+    data: query
+  })
+}

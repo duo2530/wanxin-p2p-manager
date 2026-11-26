@@ -228,38 +228,42 @@ export const constantRoutes = [
     {
         path: '/repaymentAdmin',
         component: Layout,
-        redirect: '/example/repayment',
+        redirect: '/repaymentAdmin/today',
         name: 'repaymentAdmin',
         meta: { title: '还款管理', icon: 'example' },
         children: [
             {
-                path: 'temp',
-                name: 'repayment',
-                component: () => import('@/views/temp/index'),
+                path: 'today',
+                name: 'repayment-today',
+                props: { mode: 'today' },
+                component: () => import('@/views/repayment/index'),
                 meta: { title: '当日待还款', icon: 'example' }
             },
             {
-                path: 'temp',
-                name: 'repayment',
-                component: () => import('@/views/temp/index'),
+                path: 'pending',
+                name: 'repayment-pending',
+                props: { mode: 'pending' },
+                component: () => import('@/views/repayment/index'),
                 meta: { title: '待还款借款', icon: 'example' }
             },
             {
-                path: 'temp',
-                name: 'repayment',
-                component: () => import('@/views/temp/index'),
+                path: 'inprogress',
+                name: 'repayment-inprogress',
+                props: { mode: 'inprogress' },
+                component: () => import('@/views/repayment/index'),
                 meta: { title: '还款中借款', icon: 'example' }
             },
             {
-                path: 'temp',
-                name: 'repayment',
-                component: () => import('@/views/temp/index'),
+                path: 'done',
+                name: 'repayment-done',
+                props: { mode: 'done' },
+                component: () => import('@/views/repayment/index'),
                 meta: { title: '已还款借款', icon: 'example' }
             },
             {
-                path: 'temp',
-                name: 'repayment',
-                component: () => import('@/views/temp/index'),
+                path: 'early',
+                name: 'repayment-early',
+                component: () => import('@/views/repayment/early'),
                 meta: { title: '提前还款记录', icon: 'example' }
             },
         ]
